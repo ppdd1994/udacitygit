@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/knockout/3.4.2/knockout-min.js"></script>
+	<script src="app.js" defer="defer"></script>
+</head>
+<body>
+<div class="button">
+	<ul class="catlist" data-bind="foreach: catlist">
+		<li class="item" data-bind="text: name , click: $parent.changecc"></li>
+	</ul>
+</div>
+<div class="cat-detail" data-bind="with: currentcat">
+	<div class="title">Name:</div>
+	<div class="name des" data-bind="text: name">
+	</div>
+	<div class="title">Feed:</div>
+	<div class="clickNum des" data-bind="text: clickNum"></div>
+	<div class="title">Level:</div>
+	<div class="level des"  data-bind="text: level"></div>
+	<div class="pic" data-bind="click: $parent.addClick"><img data-bind="attr: { src: imgUrl }"></div>
+</div>
+</body>
+</html>
